@@ -2,6 +2,9 @@
   "beam_width":1,
   "beam_density":0.0,
   "cnn_maxout_pieces":3,
+  "deprecation_fixes":{
+    "vectors_name":"spacy_pretrained_vectors"
+  },
   "extra_labels":[
     "COURTNAME",
     "COURTNAME",
