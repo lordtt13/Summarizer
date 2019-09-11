@@ -9,7 +9,11 @@ import main_model as mm
 import pdf_to_text as convert
 import load as l
 import json
-nlp = l.init()
+import pickle
+import spacy
+
+with open('model.pkl','rb') as f:
+    nlp = pickle.load(f)
 
 
 def jsonify(pdf_file_path,nlp = nlp):
