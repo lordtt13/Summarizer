@@ -9,8 +9,10 @@ import main_model as mm
 import pdf_to_text as convert
 import load as l
 import json
+nlp = l.init()
 
-def jsonify(pdf_file_path):
+
+def jsonify(pdf_file_path,nlp = nlp):
     """
     Build an indented .json doc from a legal .pdf document using PDFBox API
     and a spacy NER model using pre-existing labels
@@ -26,7 +28,6 @@ def jsonify(pdf_file_path):
     text = convert.convert_pdf_to_text_pdfbox_api(pdf_file_path)
     text = text[:1000000]
     
-    nlp = l.init()
     tags = mm.processData(nlp,text)
     with open('result.json','w+') as f:
         json.dump(tags,f,indent = 4)
