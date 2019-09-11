@@ -1,4 +1,5 @@
 /NER/PDFs
+/NER/Text Files
 *.txt
 *.pdf
 *.json
