@@ -6,20 +6,27 @@ Created on Thu Sep  5 21:46:53 2019
 """
 
 import main_model as mm
-import spacy
+import pdf_to_text as convert
+import load as l
+import json
 
-text = ''
-sample_doc = 'converted.txt'
-f = open(sample_doc,'r',encoding = 'utf-8', errors = 'ignore')
-for i in f.readlines():
-    text += i
-text = text[:1000000]
-f.close()
-
-nlp = spacy.load(r'Final_model')
-tags = mm.processData(nlp,text)
-f = open('tags_orihginal.txt','w+')
-for i,j in tags.items():
-    f.write(i)
-    f.write(str(j))
-f.close()
+def jsonify(pdf_file_path):
+    """
+    Build an indented .json doc from a legal .pdf document using PDFBox API
+    and a spacy NER model using pre-existing labels
+    
+    # Arguments
+        pdf_file_path(string):File path to the PDF you want to convert to entities
+        
+    # Returns
+        results.json:A beautified .json documents containing all the entities
+        found in the document
+    
+    """
+    text = convert.convert_pdf_to_text_pdfbox_api(pdf_file_path)
+    text = text[:1000000]
+    
+    nlp = l.init()
+    tags = mm.processData(nlp,text)
+    with open('result.json','w+') as f:
+        json.dump(tags,f,indent = 4)
