@@ -1,0 +1,4 @@
+/NER/PDFs
+*.txt
+*.pdf
+*.json

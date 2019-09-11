@@ -6,18 +6,19 @@ Created on Thu Sep  5 21:46:53 2019
 """
 
 import main_model as mm
+import spacy
 
 text = ''
-sample_doc = 'trainingdata_editted_judge'
+sample_doc = 'converted.txt'
 f = open(sample_doc,'r',encoding = 'utf-8', errors = 'ignore')
 for i in f.readlines():
     text += i
 text = text[:1000000]
 f.close()
 
-nlp = mm.initModel(model = r'.\Final_model')
+nlp = spacy.load(r'Final_model')
 tags = mm.processData(nlp,text)
-f = open('tags.txt','w+')
+f = open('tags_orihginal.txt','w+')
 for i,j in tags.items():
     f.write(i)
     f.write(str(j))
