@@ -13,6 +13,7 @@ import json
 nlp = l.init()
 
 
+
 def jsonify(pdf_file_path,nlp = nlp):
     """
     Build an indented .json doc from a legal .pdf document using PDFBox API
