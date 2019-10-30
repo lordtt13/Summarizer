@@ -1488,11 +1488,6 @@
                     "tag":"RESPONDENT"
                 },
                 {
-                    "start":8104,
-                    "end":8324,
-                    "tag":"PETITIONER"
-                },
-                {
                     "start":4706,
                     "end":4724,
                     "tag":"RESPONDENT"

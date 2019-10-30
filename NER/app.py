@@ -10,7 +10,8 @@ import pdf_to_text as convert
 import load as l
 import json
 
-nlp = l.init()
+# Can be changed to alternate if wanted to
+nlp = l.init(r'Final_model_alt')
 
 def jsonify(pdf_file_path,nlp = nlp):
     """

@@ -16,7 +16,7 @@ from spacy.util import minibatch, compounding
 import json
 
 
-def initModel(model = r'Final_model', new_model_name= 'Final_model' , output_dir= r'Final_model', n_iter=10, filename = r'traindata'):
+def initModel(model = None, new_model_name= 'Final_model' , output_dir= r'Final_model_alt', n_iter=10, filename = r'traindata'):
 
     # New entity labels
     # Specify the new entity labels which you want to add here
@@ -99,5 +99,3 @@ def processData(nlp,text):
     # with open('Results.json' ,'w') as f:
     # 	json.dump(tags ,f, indent=2)
     return tags
-
-initModel()

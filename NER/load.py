@@ -6,7 +6,7 @@ Created on Wed Sep 11 17:49:58 2019
 """
 import spacy
 
-def init():
-    nlp = spacy.load(r'Final_model')
+def init(filename):
+    nlp = spacy.load(filename)
     
     return nlp
