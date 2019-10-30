@@ -1,6 +1,7 @@
 /NER/PDFs
 /NER/Text Files
 /NER/Final_model
+/NER/traindata_new
 *.txt
 *.pdf
 *.json
