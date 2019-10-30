@@ -16,14 +16,14 @@ from spacy.util import minibatch, compounding
 import json
 
 
-def initModel(model = None, new_model_name= 'Final_model' , output_dir= r'Final_model', n_iter=20):
+def initModel(model = r'Final_model', new_model_name= 'Final_model' , output_dir= r'Final_model', n_iter=10, filename = r'traindata'):
 
     # New entity labels
     # Specify the new entity labels which you want to add here
     LABEL = ['COURTNAME', 'PETITIONER', 'DATE' , 'RESPONDENT', 'ACTS', 'JUDGE']
 
     # Loading training data 
-    with open (r'traindata', 'rb') as fp:
+    with open (filename, 'rb') as fp:
         TRAIN_DATA = pickle.load(fp)
 
     """Setting up the pipeline and entity recognizer, and training the new entity."""

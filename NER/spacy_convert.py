@@ -13,7 +13,6 @@ import re
 
 data = json.load(open(r'final_data.json', encoding='utf-8-sig'))
 
-
 traindata = []
 for i in data['annotations_and_examples']:
     content = i['content']
